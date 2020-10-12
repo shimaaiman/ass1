@@ -7,7 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(\App\Order::class, function (Faker $faker) {
     return [
-    	'CustomerID' => factory('App\Customer')->create()->id,
+    	//'CustomerID' => factory('App\Customer')->create()->id,
+    	'CustomerID' => \App\Customer::all()->random()->id,
         'OrderDate' => $faker-> dateTime,
         'RequiredDate' => $faker-> dateTime,
         'ShippedDate' => $faker-> dateTime,

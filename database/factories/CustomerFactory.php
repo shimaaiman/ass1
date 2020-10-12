@@ -7,7 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(\App\Customer::class, function (Faker $faker) {
     return [
-        'salesRepEmployeeNum' => factory('App\Employee')->create()->id,
+        //'salesRepEmployeeNum' => factory('App\Employee')->create()->id,
+        'salesRepEmployeeNum' => \App\Employee::all()->random()->id,
         'Name' => $faker-> name,
         'LastName' => $faker-> name,
         'FistName' => $faker-> name,
